@@ -14,8 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
 //Router
-// require("./routing/apiRoutes.js")(app);
-// require("./routing/htmlRoutes.js")(app);
+require("./routing/apiRoutes.js")(app);
+require("./routing/htmlRoutes.js")(app);
 
 //Listener
 app.listen(PORT, function() {
