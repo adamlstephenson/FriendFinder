@@ -10,7 +10,7 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 
 //Express Data Parsing
-app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //Router
@@ -18,6 +18,6 @@ require("./routing/apiRoutes.js")(app);
 require("./routing/htmlRoutes.js")(app);
 
 //Listener
-app.listen(PORT, function() {
+app.listen(PORT, function () {
     console.log("app listening on PORT: " + PORT)
 });
