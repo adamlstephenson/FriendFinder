@@ -33,7 +33,7 @@
         <h3>
             <strong>Question 1</strong>
         </h3>
-        <h4>Some Question</h4>
+        <h4>Cucumber Flavored Sparkling Water Is The Bomb</h4>
         <div class="col-md-2" style="padding: 0">
             <select class="form-control" id="q1">
                 <option value=>Select an Option</option>
@@ -51,9 +51,9 @@
         <h3>
             <strong>Question 2</strong>
         </h3>
-        <h4>Some Question</h4>
+        <h4>Minneapolis Is Better Than St. Paul</h4>
         <div class="col-md-2" style="padding: 0">
-            <select class="form-control" id="q1">
+            <select class="form-control" id="q2">
                 <option value=>Select an Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -69,9 +69,9 @@
         <h3>
             <strong>Question 3</strong>
         </h3>
-        <h4>Some Question</h4>
+        <h4>It Sucks When It Rains</h4>
         <div class="col-md-2" style="padding: 0">
-            <select class="form-control" id="q1">
+            <select class="form-control" id="q3">
                 <option value=>Select an Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -87,9 +87,9 @@
         <h3>
             <strong>Question 4</strong>
         </h3>
-        <h4>Some Question</h4>
+        <h4>A Federal Maximum Wage Should Be Implemented</h4>
         <div class="col-md-2" style="padding: 0">
-            <select class="form-control" id="q1">
+            <select class="form-control" id="q4">
                 <option value=>Select an Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -105,9 +105,9 @@
         <h3>
             <strong>Question 5</strong>
         </h3>
-        <h4>Some Question</h4>
+        <h4>Extra-Terrestrials Have Visited This Planet</h4>
         <div class="col-md-2" style="padding: 0">
-            <select class="form-control" id="q1">
+            <select class="form-control" id="q5">
                 <option value=>Select an Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -123,9 +123,9 @@
         <h3>
             <strong>Question 6</strong>
         </h3>
-        <h4>Some Question</h4>
+        <h4>More Money More Problems</h4>
         <div class="col-md-2" style="padding: 0">
-            <select class="form-control" id="q1">
+            <select class="form-control" id="q6">
                 <option value=>Select an Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -141,9 +141,9 @@
         <h3>
             <strong>Question 7</strong>
         </h3>
-        <h4>Some Question</h4>
+        <h4>Baseball Is Boring</h4>
         <div class="col-md-2" style="padding: 0">
-            <select class="form-control" id="q1">
+            <select class="form-control" id="q7">
                 <option value=>Select an Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -159,9 +159,9 @@
         <h3>
             <strong>Question 8</strong>
         </h3>
-        <h4>Some Question</h4>
+        <h4>Sunglasses Indoors?</h4>
         <div class="col-md-2" style="padding: 0">
-            <select class="form-control" id="q1">
+            <select class="form-control" id="q8">
                 <option value=>Select an Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -177,9 +177,9 @@
         <h3>
             <strong>Question 9</strong>
         </h3>
-        <h4>Some Question</h4>
+        <h4>I Go Hard In The Paint</h4>
         <div class="col-md-2" style="padding: 0">
-            <select class="form-control" id="q1">
+            <select class="form-control" id="q9">
                 <option value=>Select an Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -195,9 +195,9 @@
         <h3>
             <strong>Question 10</strong>
         </h3>
-        <h4>Some Question</h4>
+        <h4>It's Just A Ride</h4>
         <div class="col-md-2" style="padding: 0; margin-bottom: 5px">
-            <select class="form-control" id="q1">
+            <select class="form-control" id="q10">
                 <option value=>Select an Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -224,6 +224,66 @@
                 </p>
             </div>
         </footer>
+
+        <div id="results-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <h2 class="modal-title">
+                            <strong>Best Match</strong>
+                        </h2>
+                    </div>
+                    <div class="modal-body">
+                        <h2 id="match-name"></h2>
+                        <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script type="text/javascript">
+
+            $("#submit").on("click", function (e) {
+                e.preventDefault();
+
+                //Need form validation
+                //____________________
+
+                var userData = {
+                    name: $("#name").val(),
+                    photo: $("#photo").val(),
+                    scores: [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val(),
+                    ]
+                }
+
+                //AJAX
+                //________________________________
+
+                $.post("/api/friends", userData, function (data) {
+
+                })
+
+
+            })
+
+        </script>
 
 </body>
 
