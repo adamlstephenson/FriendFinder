@@ -256,41 +256,55 @@
             $("#submit").on("click", function (e) {
                 e.preventDefault();
 
-                //Need form validation
-                //____________________
+                function formValidation() {
+                    var isValid = true;
+                    $(".form-control").each(function () {
+                        if ($(this).val() === "") {
+                            isValid = false
+                        }
+                    })
 
-                var userData = {
-                    name: $("#name").val(),
-                    photo: $("#photo").val(),
-                    scores: [
-                        $("#q1").val(),
-                        $("#q2").val(),
-                        $("#q3").val(),
-                        $("#q4").val(),
-                        $("#q5").val(),
-                        $("#q6").val(),
-                        $("#q7").val(),
-                        $("#q8").val(),
-                        $("#q9").val(),
-                        $("#q10").val(),
-                    ]
+                    return isValid;
                 }
 
-                //AJAX
-                //________________________________
 
-                var currentURL = window.location.origin;
+                if (formValidation()) {
+                    var userData = {
+                        name: $("#name").val(),
+                        photo: $("#photo").val(),
+                        scores: [
+                            $("#q1").val(),
+                            $("#q2").val(),
+                            $("#q3").val(),
+                            $("#q4").val(),
+                            $("#q5").val(),
+                            $("#q6").val(),
+                            $("#q7").val(),
+                            $("#q8").val(),
+                            $("#q9").val(),
+                            $("#q10").val(),
+                        ]
+                    }
 
-                $.post(currentURL + "/api/friends", userData, function (data) {
-                    console.log(data);
+                    //AJAX
+                    //________________________________
 
-                    $("#match-name").text(data.name)
-                    $("#match-img").attr("src", data.photo)
+                    var currentURL = window.location.origin;
 
-                    $("#results-modal").modal("toggle")
-                })
+                    $.post(currentURL + "/api/friends", userData, function (data) {
+                        console.log(data);
 
-                return false
+                        $("#match-name").text(data.name)
+                        $("#match-img").attr("src", data.photo)
+
+                        $("#results-modal").modal("toggle")
+                    })
+
+                    return false
+                }
+                else {
+                    alert("Please fill out the entire survey")
+                }
             })
 
         </script>
