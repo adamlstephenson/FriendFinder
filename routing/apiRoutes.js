@@ -31,14 +31,15 @@ module.exports = function (app) {
 
         for (var i = 0; i < friends.length; i++) {
 
+            //console.log(friends[i])
 
             totatDifference = 0;
 
             for (var j = 0; j < friends[i].scores[j]; j++) {
 
-                console.log(friends[i])
+              //  console.log(friends[i].scores[2])
 
-                totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
+                totalDifference += Math.abs(parseInt(userScores[j]) - friends[i].scores[j]);
 
                 //console.log(totalDifference)
 
@@ -48,6 +49,8 @@ module.exports = function (app) {
                     friendMatch.photo = friends[i].photo;
                     friendMatch.friendDifference = totalDifference;
                 }
+
+                //console.log(friendMatch.name)
             }
 
         }
