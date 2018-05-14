@@ -20,7 +20,6 @@ module.exports = function (app) {
             name: "",
             photo: "",
             friendDifference: 1000,
-            totalDifferenceTwo: []
         }
 
         var userData = req.body;
@@ -34,7 +33,7 @@ module.exports = function (app) {
 
             //console.log(friends[i])
 
-            totatDifference = 0;
+            totalDifference = 0;
 
             for (var j = 0; j < friends[i].scores[j]; j++) {
 
@@ -42,9 +41,7 @@ module.exports = function (app) {
 
                 totalDifference += Math.abs(parseInt(userScores[j]) - friends[i].scores[j]);
 
-                friendMatch.totalDifferenceTwo.push(totalDifference)
-
-                console.log(friendMatch.totalDifferenceTwo)
+                console.log(totalDifference)
 
                 if (totalDifference <= friendMatch.friendDifference) {
 
