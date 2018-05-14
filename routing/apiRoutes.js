@@ -15,7 +15,6 @@ module.exports = function (app) {
     //POST Request
 
     app.post("/api/friends", function (req, res) {
-        //friends.push(req.body)
 
         var friendMatch = {
             name: "",
@@ -25,36 +24,38 @@ module.exports = function (app) {
 
         var userData = req.body;
         var userScores = userData.scores;
-
-        friends.push(userData)
+        var totalDifference = 0;
 
         //Total difference loop
         //=========================================
 
         for (var i = 0; i < friends.length; i++) {
 
-            console.log(friends[i])
 
             totatDifference = 0;
 
             for (var j = 0; j < friends[i].scores[j]; j++) {
 
+                console.log(friends[i])
+
                 totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
 
-                console.log(totalDifference)
+                //console.log(totalDifference)
 
                 if (totalDifference <= friendMatch.friendDifference) {
 
                     friendMatch.name = friends[i].name;
-                    friendMatch.phot = friends[i].photo;
+                    friendMatch.photo = friends[i].photo;
                     friendMatch.friendDifference = totalDifference;
                 }
             }
 
-
         }
 
+        friends.push(userData)
+
         res.json(friendMatch)
+
 
     });
 

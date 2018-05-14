@@ -1,14 +1,14 @@
 var friends = [
     {
         name: "Curtis",
-        photo: "http://law.syr.edu/uploads/images/people-image/Kelly_Curtis_7141.jpg",
+        photo: "https://www.dewv.edu/sites/default/files/bios/curtism.jpg",
         scores: [
             5,
             3,
             1,
             2,
             5,
-            4,
+            2,
             3,
             3,
             4,
@@ -18,7 +18,7 @@ var friends = [
 
     {
         name: "Kate",
-        photo: "https://www.gv.com/img/team-large/kate-aronowitz.jpg",
+        photo: "https://fcnl-production.s3.amazonaws.com/image/43/medium.jpg?1474571880",
         scores: [
             5,
             3,
@@ -35,7 +35,7 @@ var friends = [
 
     {
         name: "Bryce",
-        photo: "http://www.brycedessner.com/wp-content/uploads/2014/05/Bryce-Dessner-June-2013-Credit-Charlotte-de-Mezamat.jpg",
+        photo: "https://pbs.twimg.com/profile_images/779530254691938304/8nrXEfUZ_400x400.jpg",
         scores: [
             1,
             3,
@@ -52,14 +52,14 @@ var friends = [
 
     {
         name: "Jenna",
-        photo: "http://mediad.publicbroadcasting.net/p/innovationtrail/files/styles/x_large/public/201308/Jenna_Flanagan.JPG",
+        photo: "https://pbs.twimg.com/profile_images/959586523292229632/wF3Noisg_400x400.jpg",
         scores: [
             4,
             1,
             4,
             3,
             3,
-            3,
+            2,
             4,
             2,
             5,
@@ -69,11 +69,11 @@ var friends = [
 
     {
         name: "Alice",
-        photo: "https://www.xconomy.com/wordpress/wp-content/images/2016/06/Alice-Zhang-Orig-size-15x10-1100x733.jpg",
+        photo: "https://www.arnoldporter.com/~/media/images/people/h/huling-alice/huling_alice_1116.jpg",
         scores: [
             5,
             5,
-            5,
+            1,
             3,
             3,
             1,
